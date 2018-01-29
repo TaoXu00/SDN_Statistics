@@ -1,0 +1,2 @@
+1.how to create a queue at the port of the switch
+ovs-vsctl set port s1-eth2 qos=@newqos -- --id=@newqos create qos type=linux-htb other-config:max-rate=5000000 queues:0=@newqueue -- --id=@newqueue create queue other-config:min-rate=3000000 other-config:max-rate=3000000

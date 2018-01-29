@@ -1,0 +1,21 @@
+How to run the System?
+1.Setup  
+   ->floodlight(SDN Controller)
+   ->mininet(Deploy Network topology)
+   ->Xampp(mySql server)
+   ->Bridge(connection between physical host(ubuntu) and the hosts in mininet)
+ 2.change the configuration file
+    ->port                       --SDN controller floodlight RESTAPI port 
+    ->image                      --docker image which is used to create the docker container in your host docker repository
+    ->container                  --container name which will combine with the host IP address
+    ->hostInfoDir                --the connection of the mininet hosts,and hosts IP Address. Follow the format of the example file
+    ->serverdeployRatio          --the ration of the initial network hosts which will run the docker container
+    ->policy                     -- migration Policy(random,bandwidth,shortest path)
+                                 [random]: randomly select the src and destination
+                                 [bandwidth]:select the host which has the maximum available bandwidth as migration destination host 
+                                 [shortest path]:select the host which has fastest path from the migration source host 
+    ->RandomGeneratorSeed        --the seed for randomly select the hosts which run the docker container,and used by the Random policy
+    ->
+     
+    
+ 
