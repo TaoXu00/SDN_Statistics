@@ -15,14 +15,16 @@ import java.util.TimeZone;
 
 import javax.ws.rs.core.UriBuilder;
 
+import org.sdn.ServerInfoLog.MsgLog;
 import org.sdn.dataType.KeyPair;
 import org.sdn.dataType.SecurityInfo;
 import org.sdn.dataType.deploymentStatus;
 import org.sdn.dataType.link;
 
 import com.mysql.jdbc.DatabaseMetaData;
-
+import org.sdn.ServerInfoLog.MsgLog;
 public class DBFunction {
+  public  static MsgLog msglog=new MsgLog();
   private static deploymentStatus deploymentS=new deploymentStatus();
   private static Map<String,Integer>linkBandwidth=new HashMap<String,Integer>();
   private static Map<String,SecurityInfo> hostSecurityInfo=new HashMap<String,SecurityInfo>();
@@ -87,5 +89,25 @@ public class DBFunction {
 	//	rand.setSeed(System.currentTimeMillis());
 		int n=rand.nextInt(length);
 		return n;
+	}
+    public static String getCurTime(){
+        long unixTime=System.currentTimeMillis();
+        Date date=new Date(unixTime);
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        sdf.setTimeZone(TimeZone.getTimeZone("UTC-6"));
+        String time=sdf.format(date);
+        return time;
+    }
+	public static void writeTolog(String s) {
+		System.out.println(s);
+		try{
+		System.out.println(s);
+		String time=getCurTime();
+		msglog.write("["+time+"]"+s+"\n");
+		}
+		catch(Exception e){
+		 e.printStackTrace();
+		}
+
 	}
 }

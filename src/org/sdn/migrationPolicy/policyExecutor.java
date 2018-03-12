@@ -84,7 +84,7 @@ public class policyExecutor {
 	    ResultSet rs=stt.executeQuery(spublic static final int 1M=1000000;ql);   
 	    while(rs.next()){
 	    	String port=rs.getString(1)+"_"+rs.getString(2);
-	    	System.out.println("get the miniest port is "+ port);	    	
+	    	System.out.println("get the miniest port is "+ port);
 	    	String dsthostIP=formPortToHostIP(port);
 	    	for(host h:freehosts){
 	    		if(h.getIP().equals(dsthostIP)){

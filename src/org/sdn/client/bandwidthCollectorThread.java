@@ -51,7 +51,7 @@ public class bandwidthCollectorThread extends Thread {
   	    	        JSONArray jsonarray=new JSONArray(s);
   	    	        if(!jsonarray.get(0).equals(null)){
   	       	        	//System.out.println(dpid+" "+port+" length:"+jsonarray.length());
-  	           	        //System.out.println(jsonarray.get(0)); 
+  	           	        //System.out.println(jsonarray.get(0));
   	    	        JSONObject jobj=(JSONObject) jsonarray.get(0);
   	    	        long bitsPerSecondsRx=jobj.getLong("bits-per-second-rx");
   	    	        long BitsPerSecondTx=jobj.getLong("bits-per-second-tx");

@@ -336,7 +336,7 @@ private LinkedList<Integer> generateRandomNumbers(int size) {
     	  while(rs.next()){
     		  String name=rs.getString("name");
     		  String ip=rs.getString("value");	 
-    		  sql="SELECT source FROM connections WHERE destination='"+name+"-eth0'";
+    		  sql="SELECT source FROM connections WHERE destination='"+name+"-eth1'";
     		  Statement sst1=conn.createStatement();
     		  ResultSet rs1=sst1.executeQuery(sql);
     		  if(rs1.next()){

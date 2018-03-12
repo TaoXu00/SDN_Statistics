@@ -54,7 +54,7 @@ public class tcpClient {
 		 String Command="SECURE_MIGRATE "+mode+" "+randomNumber+" "+KeyNumber+" "+migrationSrcHost.getIP()+" sessionID:"+session_id+"\n";
 	     sendMessage(Command);
 	     unixMigrationStartTime=System.currentTimeMillis();
-	     System.out.println("send msg:"+Command+" "+db.getCurrentTime()); 
+	     System.out.println("send msg:"+Command+" "+db.getCurrentTime());
 	     ObjectOutputStream objOut=new ObjectOutputStream(out);
 	     objOut.writeObject(lantencyTable);
 		 //host migrationDstHost=getDstHost(randomNumber);
@@ -77,7 +77,7 @@ public class tcpClient {
 		 sendMessage(Command);
  /******************************************************************************************/
 		 unixMigrationStartTime=System.currentTimeMillis();
-		 System.out.println("send msg:"+Command+" "+db.getCurrentTime()); 
+		 System.out.println("send msg:"+Command+" "+db.getCurrentTime());
  /******************************************************************************************/
          receiveMsg(migrationSrcHost,migrationDstHost);
 		 } catch (Exception e) {
@@ -187,7 +187,7 @@ public class tcpClient {
     	 else if(res.equals("OK")){
     		 System.out.println("Start Container OK");
     	 }else if(res.equals("Container Start Error"))
-    		 System.out.println("Start Container with Error"); 
+    		 System.out.println("Start Container with Error");
     	 return  res;
       }
        public void stopConnection() throws IOException{

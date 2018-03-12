@@ -52,7 +52,7 @@ public class checkingThread extends Thread{
 		  while(checking){ 
 /******************policy start execute time********************************************************/
 			  long unixPolicyStartTime=System.currentTimeMillis();
-			  System.out.println(policy+" "+db.getCurrentTime()); 
+			  System.out.println(policy+" "+db.getCurrentTime());
 /**************************************************************************************************/
 			policyExecutor pExecutor=new policyExecutor();
 			if(policy.equals("random")){

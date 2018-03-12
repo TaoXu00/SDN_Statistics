@@ -224,7 +224,7 @@ public class bandwidthThread extends Thread {
 			  Message msg=bandwidthQueue.poll();
 			  if(msg==null&&customrizationMode==0){
 		        runAsdefaultMode();
-		        System.out.println("now in bandwidth default mode"); 
+		        System.out.println("now in bandwidth default mode");
 			  }else if(msg==null&&customrizationMode==1){
 			 //  System.out.println("still in bandwidth customrizationMode");
 			   runBandwidthAsCustomrizationMode(portlists,frequency);
